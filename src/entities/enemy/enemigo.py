@@ -1,7 +1,5 @@
 import pygame 
-rojo= "red"
-alto = 800
-ancho = 700
+
 class Zombie:
     def __init__(self,x,y):
         self.x=x

@@ -1,8 +1,7 @@
 import pygame
 
-verde = "green"
-alto = 800
-ancho = 700
+
+
 
 class Agente:
     def __init__(self, x, y, mapa):

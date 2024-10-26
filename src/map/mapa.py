@@ -1,8 +1,7 @@
 import pygame
 
-# Colores
-gris = (200, 200, 200)
-blanco = (255, 255, 255)
+
+
 
 class Map:
     def __init__(self, ancho, alto):

@@ -1,4 +1,4 @@
-
+from utils import constants
 import pygame
 import sys
 from entities.player.personaje import Agente
@@ -6,22 +6,18 @@ from map.mapa import Map
 from entities.enemy.enemigo import Zombie
 pygame.init()
 
-alto = 800
-ancho = 700
 
 
-ventana = pygame.display.set_mode((alto,ancho))
+
+ventana = pygame.display.set_mode((constants.alto,constants.ancho))
 pygame.display.set_caption("angete x")
 
-blanco="white"
-verde = "green"
-rojo= "red"
-gris="grey"
+
 
 
 def main ():
     relog = pygame.time.Clock()
-    mundo= Map(alto,ancho)
+    mundo= Map(constants.alto,constants.ancho)
     agente= Agente(300,340,mundo)
     zombie0=Zombie(0,150)
     zombie1=Zombie(600,150)
