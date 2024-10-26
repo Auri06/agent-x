@@ -31,8 +31,19 @@ class Assets:
     "Clase que contiene el path de todos los assets del juego"
 
     # * Personaje
+    PERSONAJE_QUIETO = ""
+    PERSONAJE_CAMINAR_FRENTE = ""
+    PERSONAJE_CAMINAR_ATRAS = ""
+    PERSONAJE_CAMINAR_DERECHA = ""
+    PERSONAJE_CAMINAR_IZQUIERDA = ""
+
 
     # * Enemigos
+    ENEMIGO_QUIETO = ""
+    ENEMIGO_CAMINAR_FRENTE = ""
+    ENEMIGO_CAMINAR_ATRAS = ""
+    ENEMIGO_CAMINAR_DERECHA = ""
+    ENEMIGO_CAMINAR_IZQUIERDA = ""
 
     # * Mapa
 
