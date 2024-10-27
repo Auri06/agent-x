@@ -1,3 +1,4 @@
 {
-  "conventionalCommits.scopes": ["Constants", "Assets"]
+  "conventionalCommits.scopes": ["Constants", "Assets", "Game"],
+  "cSpell.words": ["colliderect", "patrullaje", "rectangulos", "tamano"]
 }

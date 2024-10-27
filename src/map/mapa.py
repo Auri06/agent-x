@@ -8,6 +8,13 @@ class Map:
         self.alto = alto
         self.BLOCK_SIZE = 50
         self.espacio = 45
+        self.grid = self.crear_grid()  # Inicializar la cuadrícula
+
+    def crear_grid(self):
+        # Crear una cuadrícula de ejemplo (0 = espacio libre, 1 = obstáculo)
+        filas = (self.alto // (self.BLOCK_SIZE + self.espacio))
+        columnas = (self.ancho // (self.BLOCK_SIZE + self.espacio))
+        return [[0 for _ in range(columnas)] for _ in range(filas)]
 
     def spawn(self, pantalla):
         pantalla.fill(Constants.BLOCK_COLOR)
@@ -28,3 +35,6 @@ class Map:
 
     def obtener_rectangulos(self):
         return self.rectangulos
+
+    def obtener_grid(self):
+        return self.grid  # Método que devuelve la cuadrícula

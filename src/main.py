@@ -1,9 +1,12 @@
+# main.py
+
 import pygame
 import sys
 from entities.player.personaje import Agente
 from map.mapa import Map
 from entities.enemy.enemigo import Zombie
 from utils.constants import Constants
+
 pygame.init()
 
 ventana = pygame.display.set_mode(
@@ -15,18 +18,22 @@ def main():
     relog = pygame.time.Clock()
     mundo = Map(Constants.alto_mapa, Constants.ancho_mapa)
     agente = Agente(300, 340, mundo)
-    zombie0 = Zombie(0, 150)
-    zombie1 = Zombie(600, 150)
-    zombie2 = Zombie(0, 150)
-    zombie3 = Zombie(100, 530)
-    zombie4 = Zombie(600, 340)
-    zombie5 = Zombie(300, 630)
-    zombie6 = Zombie(720, 40)
+
+    # Crear zombies con acceso a la grid del mapa y a las colisiones
+    zombies = [
+        Zombie(x=100, y=100, grid=mundo.obtener_grid(), mapa=mundo),
+        Zombie(x=200, y=200, grid=mundo.obtener_grid(), mapa=mundo),
+    ]
+
+    for zombie in zombies:
+        zombie.agregar_objetivo(agente)
+
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
+
         teclas = pygame.key.get_pressed()
 
         if teclas[pygame.K_LEFT]:
@@ -39,14 +46,13 @@ def main():
             agente.movimiento(0, 5)
 
         mundo.spawn(ventana)
+
         agente.spawn(ventana)
-        zombie0.spawn(ventana)
-        zombie1.spawn(ventana)
-        zombie2.spawn(ventana)
-        zombie3.spawn(ventana)
-        zombie4.spawn(ventana)
-        zombie5.spawn(ventana)
-        zombie6.spawn(ventana)
+
+        for zombie in zombies:
+            zombie.actualizar()
+            zombie.spawn(ventana)
+
         pygame.display.flip()
         relog.tick(58)
 
