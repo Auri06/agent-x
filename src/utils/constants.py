@@ -1,5 +1,5 @@
 from pathlib import Path
-from assets import images 
+
 class Constants:
     "Clase que contiene todas las constantes del proyecto"
 
@@ -46,7 +46,7 @@ class Assets:
     up2:Path= Path("assets/images/player/up2.png")
     up3:Path= Path("assets/images/player/up3.png")
     up4:Path= Path("assets/images/player/up4.png")
-    
+
     walk1:Path= Path("assets/images/player/walk1.png")
     walk2:Path= Path("assets/images/player/walk2.png")
    
@@ -54,11 +54,27 @@ class Assets:
 
 
     # * Enemigos
-    ENEMIGO_QUIETO = ""
-    ENEMIGO_CAMINAR_FRENTE = ""
-    ENEMIGO_CAMINAR_ATRAS = ""
-    ENEMIGO_CAMINAR_DERECHA = ""
-    ENEMIGO_CAMINAR_IZQUIERDA = ""
+    DOWN1:Path= Path("assets/images/enemies/DOWN1.png")
+    DOWN2:Path= Path("assets/images/enemies/DOWN2.png")
+    DOWN3:Path= Path("assets/images/enemies/DOWN3.png")
+    DOWN4:Path= Path("assets/images/enemies/DOWN4.png")
+    
+    UP1:Path= Path("assets/images/enemies/UP1.png")
+    UP2:Path= Path("assets/images/enemies/UP2.png")
+    UP3:Path= Path("assets/images/enemies/UP3.png")
+    UP4:Path= Path("assets/images/enemies/UP4.png")
+
+    WALK1:Path= Path("assets/images/enemies/WALK1.png")
+    WALK2:Path= Path("assets/images/enemies/WALK2.png")
+    WALK3:Path= Path("assets/images/enemies/WALK3.png")
+    WALK4:Path= Path("assets/images/enemies/WALK4.png")
+
+    QUIETO1:Path= Path("assets/images/enemies/QUIETO1.png")
+    QUIETO2:Path= Path("assets/images/enemies/QUIETO2.png")
+    QUIETO3:Path= Path("assets/images/enemies/QUIETO3.png")
+    QUIETO4:Path= Path("assets/images/enemies/QUIETO4.png")
+
+
 
     # * Mapa
 
