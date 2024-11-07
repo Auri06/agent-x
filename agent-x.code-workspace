@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "agent-x",
+			"path": "."
+		}
+	],
+	"settings": {
+		"conventionalCommits.scopes": [
+			"Constants",
+			"Assets",
+			"Game"
+		]
+	}
+}

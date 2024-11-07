@@ -1,3 +1,5 @@
+from pathlib import Path
+from assets import images 
 class Constants:
     "Clase que contiene todas las constantes del proyecto"
 
@@ -31,10 +33,23 @@ class Assets:
     "Clase que contiene el path de todos los assets del juego"
 
     # * Personaje
-    PERSONAJE_QUIETO = ""
-    PERSONAJE_CAMINAR_FRENTE = ""
-    PERSONAJE_CAMINAR_ATRAS = ""
-    PERSONAJE_CAMINAR_DERECHA = ""
+    quieto1:Path= Path("assets/images/player/quieto1.png")
+    quieto2:Path= Path("assets/images/player/quieto2.png")
+    quieto3:Path= Path("assets/images/player/quieto3.png")
+
+    down1:Path= Path("assets/images/player/down1.png")
+    down2:Path= Path("assets/images/player/down2.png")
+    down3:Path= Path("assets/images/player/down3.png")
+    down4:Path= Path("assets/images/player/down4.png")
+    
+    up1:Path= Path("assets/images/player/up1.png")
+    up2:Path= Path("assets/images/player/up2.png")
+    up3:Path= Path("assets/images/player/up3.png")
+    up4:Path= Path("assets/images/player/up4.png")
+    
+    walk1:Path= Path("assets/images/player/walk1.png")
+    walk2:Path= Path("assets/images/player/walk2.png")
+   
     PERSONAJE_CAMINAR_IZQUIERDA = ""
 
 
