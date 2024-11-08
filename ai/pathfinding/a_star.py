@@ -1,8 +1,11 @@
 import heapq
 
+
 class AStar:
     def __init__(self, grid):
         self.grid = grid
+        self.rows = len(grid)
+        self.cols = len(grid[0])
         self.open_list = []
         self.closed_list = set()
         self.came_from = {}
@@ -14,10 +17,14 @@ class AStar:
 
     def get_neighbors(self, node):
         neighbors = []
+        x, y = int(node[0]), int(node[1])  # Convert to integers
+        
         for dx, dy in [(-1, 0), (1, 0), (0, -1), (0, 1)]:
-            neighbor = (node[0] + dx, node[1] + dy)
-            if 0 <= neighbor[0] < len(self.grid) and 0 <= neighbor[1] < len(self.grid[0]) and self.grid[neighbor[0]][neighbor[1]] == 0:
-                neighbors.append(neighbor)
+            new_x, new_y = x + dx, y + dy
+            if (0 <= new_x < self.cols and 
+                0 <= new_y < self.rows and 
+                self.grid[new_y][new_x] == 0):
+                neighbors.append((new_x, new_y))
         return neighbors
 
     def reconstruct_path(self, current):
@@ -28,6 +35,17 @@ class AStar:
         return total_path[::-1]
 
     def search(self, start, goal):
+        # Convert start and goal to integers
+        start = (int(start[0]), int(start[1]))
+        goal = (int(goal[0]), int(goal[1]))
+        
+        # Reset internal state
+        self.open_list = []
+        self.closed_list = set()
+        self.came_from = {}
+        self.g_score = {}
+        self.f_score = {}
+
         heapq.heappush(self.open_list, (0, start))
         self.g_score[start] = 0
         self.f_score[start] = self.heuristic(start, goal)
